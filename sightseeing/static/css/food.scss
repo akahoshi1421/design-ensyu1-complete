@@ -1,0 +1,266 @@
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    .container{
+        overflow-x: hidden;
+        width: 100%;
+        .title-container{
+            width: 100%;
+            min-width: 100vw;
+            height: 100vh;
+            background: url("../img/nagoya_foods.jpg") no-repeat;
+            background-size: cover;
+            position: relative;
+            z-index: -1;
+            
+            &::before{
+                content: "";
+                position: fixed;
+                background: inherit;
+                filter: blur(10px);
+                top: -25px;
+                left: -25px;
+                right: -25px;
+                bottom: -25px;
+            }
+            h1{
+                position: fixed;
+                left: 50%;
+                top: 2%;
+                transform: translateX(-20%);
+                font-size: 8vw;
+                width: 100%;
+                letter-spacing: 1vw;
+                color: white;
+
+                span{
+                    animation: textUp 0.6s ease forwards;
+                    position: absolute;
+                    transform: translateY(25vw);
+                    text-shadow: 7px 6px 12px grey;
+                    @for $i from 1 to 7 {
+                        &:nth-child(#{$i}){
+                            left: calc(8vw * (#{$i} - 1) + 3vw);
+                            animation-delay: calc(0.8s + #{$i} * 0.05s);
+                        }
+                    }
+                }
+
+            }
+
+            
+        }
+
+        .main{
+            background-color: #fff24e;
+            width: 100%;
+            height: auto;
+            .discription-container{
+                padding-top: 5vw;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                .one-flex{
+                    margin: 2.5vw;
+                    width: 85%;
+                    max-width: 400px;
+                    //height: 40vw;
+                    //min-height: 40vh;
+                    background-color: white;
+                    border-radius: 3vh;
+                    overflow: hidden;
+                    transform: translateY(-20%);
+                    opacity: 0;
+                    animation: flexanime 0.6s ease forwards;
+                    
+                        position: relative;
+                        h2{
+                            font-size: unquote("min(3rem, 25px)");
+                            margin-top: 2vw;
+                            margin-left: 2vw;
+                            position: relative;
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                height: 2px;
+                                width: 90%;
+                                background-color: grey;
+                            }
+                        }
+                        
+                        .content{
+                            text-align: center;
+                            img{
+                                padding-top: 2%;
+                                padding-right: 2%;
+                                width: 85%;
+                                
+                            }
+                            
+                            .content-p{
+                                text-align: left;
+                            }
+                            p{
+                                width: 90%;
+                                padding-left: 5%;
+                                padding-top: 2%;
+                                padding-bottom: 2%;
+                                font-size:  unquote("min(2.3rem, 15px)");
+                            }
+                        }
+                    
+                    @for $i from 1 to 10 {
+                        &:nth-child(#{$i}){
+                            animation-delay: 2.3s + 0.05s * $i;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .scroll-top{
+        position: fixed;
+        bottom: 2%;
+        right: 3%;
+        width: 10%;
+        height: 10vw;
+        max-width: 70px;
+        max-height: 70px;
+        cursor: pointer;
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-top: 2px solid grey;
+            border-left: 2px solid grey;
+            transform: rotate(45deg);
+            animation: topanime 0.8s ease infinite;
+        }   
+        &::before{
+            content: "TOP";
+            position: absolute;
+            left: 50%;
+            top: 80%;
+            transform: translate(-50%, -80%);
+            
+        }
+    }
+
+    .return-top{
+        position: fixed;
+        overflow: hidden;
+        top: -50%;
+        left: 2%;
+        width: 20%;
+        min-width: 80px;
+        height: 10vh;
+        background-color: white;
+        border-radius: 25vh;
+        text-align: center;
+        cursor: pointer;
+        animation: btnanime 0.3s ease forwards;
+        animation-delay: 2s;
+
+        transition: all 0.3s ease;
+        .ja{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: unquote("min(2rem, 5vw)");
+            transition: all 0.3s ease;
+            
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -20%;
+                width: 140%;
+                height: 2px;
+                background-color: grey;
+            }
+        }
+        .en{
+            position: absolute;
+            top: 150%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: unquote("min(2rem, 25px)");
+            transition: all 0.3s ease;
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -20%;
+                width: 140%;
+                height: 2px;
+                background-color: grey;
+            }
+        }
+
+        &:hover{
+            box-shadow: 0 0 5px grey inset;
+            .ja{
+                top: -50%;
+            }
+            .en{
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+    }
+}
+
+
+@keyframes textUp {
+    0%{
+        transform: translateY(25vw);
+    }
+    5%{
+        transform: translateY(28vw);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes topanime {
+    0%{
+        transform: translateY(0) rotate(45deg);
+    }
+    50%{
+        transform: translateY(-20%) rotate(45deg);
+    }
+    100%{
+        transform: translateY(0) rotate(45deg);
+    }
+}
+
+@keyframes btnanime {
+    0%{
+        top: -50%;
+    }
+    100%{
+        top: 2%;
+    }
+}
+
+@keyframes flexanime {
+    0%{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

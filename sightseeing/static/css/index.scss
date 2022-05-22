@@ -1,0 +1,512 @@
+$black: black; 
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+}
+
+body{
+    background-color: #fff24e;
+}
+
+.loading{
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(250, 250, 146);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    #loadlogo{
+        position: relative;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        
+        &::after, &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            border: black solid 3px;
+            z-index: 2;
+        }
+        &::after{
+            transform: rotate(45deg);
+            animation: rotateanime2 1.5s ease infinite;
+        }    
+        &::before{
+            animation: rotateanime1 1.5s ease infinite;
+        }
+
+        #loadmsg{
+            position: absolute;
+            top: 110px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
+
+@keyframes rotateanime1 {
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    50%{
+        transform: rotate(180deg) scale(2);
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes rotateanime2 {
+    0%{
+        transform: rotate(45deg) scale(1);
+    }
+    50%{
+        transform: rotate(225deg) scale(2);
+    }
+    100%{
+        transform: rotate(405deg) scale(1);
+    }
+}
+
+//こっから下はサイト本体
+
+header{
+    position: relative;
+    height: 65vh;
+    overflow: hidden;
+
+    .img{
+        position: absolute;
+        width: 75%;
+        height: 100%;
+        top: 0;
+        right: -10vw;
+        transition: all 0.2s ease-in;
+        background: url("../img/nagoya_castle.jpg") no-repeat;
+        background-size: cover;
+        background-position: right;
+
+        &:hover{
+            filter: blur(4px);
+            transform: scale(1.15);
+        }
+    }
+
+    h1{
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        font-size: unquote("min(4rem, 50px)");
+        color: white;
+        text-shadow: 2px 2px 6px black;
+        pointer-events: none;
+    }
+
+    .links{
+        position: absolute;
+        top: 3%;
+        left: 6%;
+        z-index: 3;
+
+        h3{
+            position: absolute;
+            left: -10%;
+            color: rgb(103, 100, 100);
+            font-size: 1.5rem;
+        }
+        ul{
+            margin-top: 15%;
+            list-style: none;
+            li{
+                position: relative;
+                margin-bottom: 10%;
+
+                .underline{
+                    position: absolute;
+                    z-index: 100;
+                    left: 0;
+                    bottom: -2%;
+                    width: 2%;
+                    height: 3px;
+                    background-color: grey;
+                    border-radius: 100vh;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: $black;
+                font-size: unquote("min(2.3rem, 30px)");
+
+
+            }
+
+
+        }
+
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -11%;
+        width: 65%;
+        height: 100%;
+        background: url("../img/background3.svg") no-repeat;
+        background-size: cover;
+        background-position: 100%;
+        z-index: 2;
+        transform: skewX(25deg) scale(1.05);
+        //border-radius: 93% 7% 100% 0% / 0% 100% 0% 100% ;
+    }
+}
+
+
+
+.buildings{
+    position: relative;
+
+    .line-1{
+        position: absolute;
+        width: 100%;
+        height: 13vh;
+        background-color: #5BAD92;
+        transform: skewY(3deg) translateY(-46%);
+        z-index: 3;
+    }
+    
+    .building-content{
+        position: relative;
+        height: 65vh;
+        overflow: hidden;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -11%;
+            width: 55%;
+            height: 100%;
+            background: url("../img/background2.svg") no-repeat;
+            background-size: cover;
+            //background-color: rgb(250, 250, 146);
+            z-index: 2;
+            transform: skewX(25deg);
+            //border-radius: 100% 0% 84% 16% / 0% 100% 0% 100%  ;
+        }
+
+        .img{
+            position: absolute;
+            width: 85%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in;
+            background: url("../img/nagoya_buildings.jpg") no-repeat;
+            background-size: cover;
+            filter: saturate(200%);
+
+            &:hover{
+                filter: blur(4px) saturate(200%);
+                transform: scale(1.15);
+            }
+        }
+
+        h2{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            font-size:  unquote("min(4rem, 50px)");
+            color: white;
+            text-shadow: 2px 2px 6px black;
+            pointer-events: none;
+        }
+    }
+
+    
+}
+
+.foods{
+    position: relative;
+
+    .line-2{
+        position: absolute;
+        width: 100%;
+        height: 13vh;
+        background-color: #5BAD92;
+        transform: skewY(-3deg) translateY(-46%);
+        z-index: 3;
+    }
+
+    .food-content{
+        position: relative;
+        height: 65vh;
+        overflow: hidden;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -15%;
+            width: 65%;
+            height: 100%;
+            background: url("../img/background2.svg") no-repeat;
+            background-size: cover;
+            z-index: 2;
+            transform: skewX(-25deg);
+        }
+
+        .img{
+            width: 85%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in;
+            background: url("../img/nagoya_foods.jpg") no-repeat;
+            background-size: cover;
+    
+            &:hover{
+                filter: blur(4px);
+                transform: scale(1.15);
+            }
+        }
+
+        h2{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            font-size:  unquote("min(4rem, 50px)");
+            color: white;
+            text-shadow: 2px 2px 6px black;
+            pointer-events: none;
+        }
+    }
+}
+
+@media screen and(max-width: 730px)  {
+    header{
+        .img{
+            width: 100%;
+            right: 0;
+            background-position: center;
+        }
+
+        &::before{
+            content: "";
+            display: none;
+        }
+
+        .links{
+            ul li a{
+                color: #f8efc8 !important;
+                text-shadow: 2px 2px 6px black;
+            }
+        }
+    }
+
+    .buildings, .foods{
+        .building-content, .food-content{
+            .img{
+                width: 100%;
+            }
+
+            &::before{
+                content: "";
+                display: none;
+            }
+        }
+
+
+    }
+}
+
+.news{
+    position: relative;
+
+    .line-3{
+        position: absolute;
+        width: 100%;
+        height: 12vh;
+        background-color: #5BAD92;
+        transform: translateY(-46%);
+        z-index: 3;
+    }
+
+    .news-content{
+        width: 100%;
+        height: 80vh;
+        //background: url("../img/background4.png") no-repeat;
+        //background-size: cover;
+        background-color: #fff24e;
+        
+        .news-title{
+            text-align: center;
+            h2{
+                position: absolute;
+                top: 11%;
+                left: 50%;
+                width: 85%;
+                font-size: unquote("min(4rem, 50px)");
+                transform: translateX(-50%);
+            }
+            p{
+                position: absolute;
+                top: 25%;
+                left: 50%;
+                width: 85%;
+                font-size: unquote("min(1rem, 20px)");
+                transform: translateX(-50%);
+            }
+        }
+
+
+        .news-list{
+            position: absolute;
+            overflow-y: scroll;
+            top: 37.5%;
+            left: 50%;
+            transform: translate(-50%);
+            width: 70%;
+            height: 60%;
+            background-color: rgba(255, 255, 255, 0.927);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 2vw;
+
+            &.page-bottom{
+                border-radius: 20px;
+
+                #last-news{
+                    position: absolute;
+                    left: 50%;
+                    height: 1px;
+                    width: 1%;
+                    transform: translateX(-50%);
+                    background-color: rgb(116, 114, 114);
+                    animation: lastnews 0.2s ease forwards;
+                    border-radius: 2px;
+                }
+            }
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            .one-news{
+                padding: 4%;
+                padding-left: 5%;
+                position: relative;
+                
+                
+                a{
+                    color: rgb(116, 114, 114);
+                    transition: all 0.3s ease-in-out;
+                    font-size: 1.2rem;
+                }
+
+                &::before{
+                    content: "●";
+                }
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    left: 3%;
+                    bottom: -2%;
+                    width: 80%;
+                    height: 0.5px;
+                    background-color: rgb(194, 191, 191);
+                }
+
+                &:hover a{
+                    padding-left: 3%;
+                }
+            }
+        }
+    }
+}
+
+.img{
+    cursor: pointer;
+}
+
+@keyframes lastnews {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scaleX(50) scaleY(7);
+    }
+    100%{
+        transform: scaleX(100) scaleY(1);
+    }
+}
+
+
+//ここから先ページ遷移用のCSS
+.slide-svg{
+    img{
+        height: 126vh;
+        position: fixed;
+        top: -13%;
+        right: -376vw;
+        z-index: 100;
+        opacity: 0;
+        display: none;
+        transform: translateX(0);
+    }
+    .img-bg{
+        top: 0;
+        right: -340%;
+        height: 100vh;
+        position: fixed;
+        background-color: rgb(250, 250, 146);
+        //width: 300%;
+        z-index: 99;
+    }
+
+    img.move{
+        display: inline !important;
+        animation: bgimgmove 1.5s ease 1 forwards;
+    }
+    .img-bg.move{
+        animation: bgmove 2.5s ease 1 forwards;
+    }
+}
+
+@keyframes bgimgmove {
+    0%{
+        right: -376vw;
+        opacity: 1;
+    }
+    100%{
+        right: 0vw;
+        opacity: 1;
+    }
+}
+
+@keyframes bgmove {
+    0%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-30%);
+        opacity: 1;
+    }
+}

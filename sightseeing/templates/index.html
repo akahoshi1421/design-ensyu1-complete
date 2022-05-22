@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ようこそ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/nagoya-website-favicon.jpg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loader.css' %}">
+    <!--メモ、幅700pxより下でcssデザインは変える-->
+    <script src="{% static 'js/index.js' %}"></script>
+</head>
+<body>
+    <div class="loading">
+        <div id="loadlogo"><p id="loadmsg">Loading</p></div>
+    </div>
+
+    <main class="container">
+        
+        <header>
+            <div class="img" where="welcome"></div>
+            <h1>ようこそ</h1>
+            <div class="links">
+                <h3>Links...</h3>
+                <ul>
+                    <li><a href="#buildings">名古屋の建物</a><span class="underline"></span></li>
+                    <li><a href="#foods">なごやめし</a><span class="underline"></span></li>
+                    <li><a href="#news">ニュース</a><span class="underline"></span></li>
+                </ul>
+            </div>
+
+        </header>
+
+        <div class="buildings" id="buildings">
+            <div class="line-1"></div>
+            <div class="building-content">
+                <!--<img src="img/nagoya_buildings.jpg">-->
+                <div class="img" where="building"></div>
+                <h2>名古屋の建物</h2>
+            </div>
+        </div>
+
+        <div class="foods" id="foods">
+            <div class="line-2"></div>
+            <div class="food-content">
+                <div class="img" where="foods"></div>
+                <h2>なごやめし</h2>
+            </div>
+        </div>
+
+        <div class="news" id="news">
+            <div class="line-3"></div>
+            <div class="news-content">
+                <div class="news-title">
+                    <h2>ニュース</h2>
+                    <p>Bingニュースからスクレイピングを行い出力しています。</p>
+                </div>
+                
+                <div class="news-list">
+                    {% for oneNews in newsContents %}
+                        <div class="one-news">
+                            <a target="_blank" href="{{oneNews.href}}">{{oneNews.text}}</a>
+                        </div>
+                    {% endfor %}
+                    <div id="last-news"></div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="slide-svg">
+        <div class="imgs">
+            <img src="{% static 'img/nagoya-city.svg' %}" alt="">
+        </div>
+        
+    </div>
+
+    <div class="cannotsee">
+        <a href="welcome"></a>
+        <a href="building"></a>
+        <a href="foods"></a>
+    </div>
+</body>
+</html>

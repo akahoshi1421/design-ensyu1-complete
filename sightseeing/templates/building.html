@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>名古屋の建物</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/nagoya-website-favicon.jpg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/building.css' %}">
+    
+</head>
+<body>
+    <div class="swiper">
+    </div>
+    <div class="container">
+        <div class="title-container">
+            <h1><span>名</span><span>古</span><span>屋</span><span>の</span><span>建</span><span>物</span></h1>
+        </div>
+        <div class="main">
+            <div class="discription-container">
+                <div class="nagoyaCastle one-flex">
+                    <h2>名古屋城</h2>
+                    <div class="content">
+                        <img src="{% static 'img/nagoya-castle2.JPG' %}">
+                        <div class="content-p">
+                            <p>名古屋城は江戸時代の始め頃、徳川家康によって建てられました。それまでは尾張地方の中心部は愛知県北部にある清州という町でしたが名古屋城が築城されてからはその中心部が名古屋に移りました。
+                                名古屋の発展の礎となったと言っても過言ではないでしょう。近年では太平洋戦争で焼け落ちた本丸御殿が再建され、煌びやかな内装を見ることができます。
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="sakae one-flex">
+                    <h2>オアシス21、テレビ塔</h2>
+                    <div class="content">
+                        <img src="{% static 'img/sakae.jpg' %}">
+                        <div class="content-p">
+                            <p>オアシス21(手前)は公園やバスターミナルなどの公共施設と商業施設が一体化した施設で、地下に様々な店舗等が入居しています。
+                                特徴的な建物は「水の宇宙船」と呼ばれており、ガラス状になっている建物の上部に上ることができます。またその上部には水が張っており、水とガラスの美しい景色を楽しむことができます。
+                                <br>テレビ塔は1954年に完成した高さ180mの電波塔です。全国のタワーで初めて国の登録有形文化財に指定されており、名古屋のシンボルの一つとなっており市民に親しまれています。
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="nagoyaScience one-flex">
+                    <h2>名古屋市科学館</h2>
+                    <div class="content">
+                        <img src="{% static 'img/nagoya-science.jpg' %}">
+                        <div class="content-p">
+                            <p>特徴的な大きな球体は世界最大級のプラネタリウムが入っており、その内径は35mもあります。さらに館内にはマイナス30度の世界を体験を体験できる部屋や、9mの人口竜巻を体験できる装置、巨大な放電装置から放電実験ショーが見られる部屋等「科学」を肌で感じる設備が整っています。
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="nagoyaScience one-flex">
+                    <h2>名古屋港水族館</h2>
+                    <div class="content">
+                        <img src="{% static 'img/aquarium.jpg' %}">
+                        <div class="content-p">
+                            <p>名古屋港水族館は延床面積が全国一位である大型の水族館でイルカやシャチ、全国で2箇所のみ飼育されているコウテイペンギン、ウミガメをはじめとした約500種を超える海の生物が飼育されています。
+                                屋外には世界最大級の屋外水槽があり、そこではイルカやアザラシ、シャチのショーを見ることができます。
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="osu one-flex">
+                    <h2>大須観音</h2>
+                    <div class="content">
+                        <img src="{% static 'img/osu.jpg' %}">
+                        <div class="content-p">
+                            <p>大須観音は1612年に徳川家康の命を受け現在の地に建立されました。正式名称は北野山真福寺宝生院であり、日本三大観音の1つとも言われています。
+                                すぐ横には大須商店街という大きな商店街があり、韓国系やアニメ系、地元特産品系や中高年世代向け等様々なジャンルの店が揃っており平日休日問わず常に多くの人で賑わっています。
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scroll-top">
+        
+    </div>
+
+    <div class="return-top">
+
+        <p class="ja">戻る</p>
+        <div class="en">BACK</div>
+
+    </div>
+
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/building.js' %}"></script>
+    <script src="{% static 'js/buildingAnime.js' %}"></script>
+</body>
+</html>

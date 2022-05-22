@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>なごやめし</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/nagoya-website-favicon.jpg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/food.css' %}">
+</head>
+<body>
+    <div class="swiper">
+    </div>
+    <div class="container">
+        <div class="title-container">
+            <h1><span>な</span><span>ご</span><span>や</span><span>め</span><span>し</span></h1>
+        </div>
+        <div class="main">
+            <div class="discription-container">
+                <div class="one-flex">
+                    <h2>手羽先</h2>
+                    <div class="content">
+                        <img src="{% static 'img/nagoya_foods.jpg' %}">
+                        <div class="content-p">
+                            <p>手羽先は鶏の羽先を唐揚げにしたものにタレや塩・胡麻・白ごま等を振りかけて出来上がる料理です。
+                                パリパリとした食感やスパイスの効いた味が病みつきになります。お酒のつまみとしても最適です。
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="one-flex">
+                    <h2>味噌カツ</h2>
+                    <div class="content">
+                        <img src="{% static 'img/misokatu.jpg' %}">
+                        <div class="content-p">
+                            <p>味噌カツは豚カツの上に八丁味噌を塗り、さらに鰹だしや砂糖等を加えた料理です。味噌の濃い味と豚カツの味の対比が食欲をとてもそそります。</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="one-flex">
+                    <h2>ひつまぶし</h2>
+                    <div class="content">
+                        <img src="{% static 'img/hitsumabushi.jpg' %}">
+                        <div class="content-p">
+                            <p>ひつまぶしはウナギのかば焼きにご飯の上に乗せたものを茶碗等のさらにとりわけて食べる料理です。ウナギ特有の食感と相まってご飯が進むこと間違いなしの一品です。
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="one-flex">
+                    <h2>ういろう</h2>
+                    <div class="content">
+                        <img src="{% static 'img/uiro2.jpg' %}">
+                        <div class="content-p">
+                            <p>ういろうはほかの地方でも存在しますが名古屋のういろうは米粉を主原料とした和菓子となっています。もちのような弾力があり、抹茶と合わせて食べるととてもおいしいです。</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="one-flex">
+                    <h2>小倉トースト</h2>
+                    <div class="content">
+                        <img src="{% static 'img/okura.jpg' %}">
+                        <div class="content-p">
+                            <p>小倉トーストは愛知県の喫茶店で提供されている軽食の一つで、厚めにスライスしたトーストにマーガリンかバターを塗った上に餡を乗せた料理です。食パンの食感と餡の味がマッチし、刺さる人にはとても刺さる料理です。</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-top">
+        
+    </div>
+
+    <div class="return-top">
+
+        <p class="ja">戻る</p>
+        <div class="en">BACK</div>
+
+    </div>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/building.js' %}"></script>
+</body>
+</html>

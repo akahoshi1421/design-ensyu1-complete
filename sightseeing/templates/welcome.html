@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ようこそ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/nagoya-website-favicon.jpg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+</head>
+<body>
+    <div class="swiper">
+    </div>
+    <div class="container">
+        <div class="title-container">
+            <h1><span>よ</span><span>う</span><span>こ</span><span>そ</span></h1>
+        </div>
+        <div class="main">
+            <div class="discription-container">
+                <div class="center">
+                    <h2>名古屋市について</h2>
+                </div>
+                <div class="discription-p">
+                    <div class="discription-inline">
+                        <p>名古屋市は愛知県の県庁所在地で人口は約230万人の政令指定都市です。東京23区を除くと横浜市、大阪市に次ぐ全国第三位の人口を有しています。また経済的に豊かな都市というだけではなく、歴史も深い都市です。
+                        </p>
+                    </div>
+                </div>
+                <div class="center">
+                    <h2>歴史</h2>
+                </div>
+                <div class="discription-p">
+                    <div class="discription-inline">
+                        <p>古墳時代のころに熱田神宮が建立され、鳥居前町となった熱田(現在の名古屋市熱田区)は港として栄えました。
+                            1609年には徳川家康が名古屋城の築城をはじめその後は徳川家のお膝元の一つである尾張藩として城下町として長く発展しました。
+                            明治に入るともともとあった町の経済力を生かし、さらに都市が成長し、今に至ります。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <h2>なごやめし</h2>
+                </div>
+                <div class="discription-p">
+                    <div class="discription-inline">
+                        <p>なごやめしと聞いたら何が思いつくでしょうか？「手羽先」「ひつまぶし」等が思いつくでしょう。当サイトではなごやめしについて紹介しているページもあるのでぜひどうぞ！。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="scroll-top">
+        
+    </div>
+
+    <div class="return-top">
+
+        <p class="ja">戻る</p>
+        <div class="en">BACK</div>
+
+    </div>
+
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/building.js' %}"></script>
+    <script src="{% static 'js/welcomeAnime.js' %}"></script>
+</body>
+</html>

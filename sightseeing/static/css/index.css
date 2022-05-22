@@ -1,0 +1,600 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+body {
+  background-color: #fff24e;
+}
+
+.loading {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fafa92;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+.loading #loadlogo {
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+}
+
+.loading #loadlogo::after, .loading #loadlogo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  border: black solid 3px;
+  z-index: 2;
+}
+
+.loading #loadlogo::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-animation: rotateanime2 1.5s ease infinite;
+          animation: rotateanime2 1.5s ease infinite;
+}
+
+.loading #loadlogo::before {
+  -webkit-animation: rotateanime1 1.5s ease infinite;
+          animation: rotateanime1 1.5s ease infinite;
+}
+
+.loading #loadlogo #loadmsg {
+  position: absolute;
+  top: 110px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@-webkit-keyframes rotateanime1 {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(2);
+            transform: rotate(180deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotateanime1 {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(2);
+            transform: rotate(180deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
+@-webkit-keyframes rotateanime2 {
+  0% {
+    -webkit-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(225deg) scale(2);
+            transform: rotate(225deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(405deg) scale(1);
+            transform: rotate(405deg) scale(1);
+  }
+}
+
+@keyframes rotateanime2 {
+  0% {
+    -webkit-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(225deg) scale(2);
+            transform: rotate(225deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(405deg) scale(1);
+            transform: rotate(405deg) scale(1);
+  }
+}
+
+header {
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+}
+
+header .img {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  right: -10vw;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: url("../img/nagoya_castle.jpg") no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+header .img:hover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+header h1 {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  font-size: min(4rem, 50px);
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  pointer-events: none;
+}
+
+header .links {
+  position: absolute;
+  top: 3%;
+  left: 6%;
+  z-index: 3;
+}
+
+header .links h3 {
+  position: absolute;
+  left: -10%;
+  color: #676464;
+  font-size: 1.5rem;
+}
+
+header .links ul {
+  margin-top: 15%;
+  list-style: none;
+}
+
+header .links ul li {
+  position: relative;
+  margin-bottom: 10%;
+}
+
+header .links ul li .underline {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  bottom: -2%;
+  width: 2%;
+  height: 3px;
+  background-color: grey;
+  border-radius: 100vh;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+header .links ul a {
+  text-decoration: none;
+  color: black;
+  font-size: min(2.3rem, 30px);
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -11%;
+  width: 65%;
+  height: 100%;
+  background: url("../img/background3.svg") no-repeat;
+  background-size: cover;
+  background-position: 100%;
+  z-index: 2;
+  -webkit-transform: skewX(25deg) scale(1.05);
+          transform: skewX(25deg) scale(1.05);
+}
+
+.buildings {
+  position: relative;
+}
+
+.buildings .line-1 {
+  position: absolute;
+  width: 100%;
+  height: 13vh;
+  background-color: #5BAD92;
+  -webkit-transform: skewY(3deg) translateY(-46%);
+          transform: skewY(3deg) translateY(-46%);
+  z-index: 3;
+}
+
+.buildings .building-content {
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.buildings .building-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -11%;
+  width: 55%;
+  height: 100%;
+  background: url("../img/background2.svg") no-repeat;
+  background-size: cover;
+  z-index: 2;
+  -webkit-transform: skewX(25deg);
+          transform: skewX(25deg);
+}
+
+.buildings .building-content .img {
+  position: absolute;
+  width: 85%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: url("../img/nagoya_buildings.jpg") no-repeat;
+  background-size: cover;
+  -webkit-filter: saturate(200%);
+          filter: saturate(200%);
+}
+
+.buildings .building-content .img:hover {
+  -webkit-filter: blur(4px) saturate(200%);
+          filter: blur(4px) saturate(200%);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.buildings .building-content h2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: min(4rem, 50px);
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  pointer-events: none;
+}
+
+.foods {
+  position: relative;
+}
+
+.foods .line-2 {
+  position: absolute;
+  width: 100%;
+  height: 13vh;
+  background-color: #5BAD92;
+  -webkit-transform: skewY(-3deg) translateY(-46%);
+          transform: skewY(-3deg) translateY(-46%);
+  z-index: 3;
+}
+
+.foods .food-content {
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.foods .food-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15%;
+  width: 65%;
+  height: 100%;
+  background: url("../img/background2.svg") no-repeat;
+  background-size: cover;
+  z-index: 2;
+  -webkit-transform: skewX(-25deg);
+          transform: skewX(-25deg);
+}
+
+.foods .food-content .img {
+  width: 85%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: url("../img/nagoya_foods.jpg") no-repeat;
+  background-size: cover;
+}
+
+.foods .food-content .img:hover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.foods .food-content h2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: min(4rem, 50px);
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 730px) {
+  header .img {
+    width: 100%;
+    right: 0;
+    background-position: center;
+  }
+  header::before {
+    content: "";
+    display: none;
+  }
+  header .links ul li a {
+    color: #f8efc8 !important;
+    text-shadow: 2px 2px 6px black;
+  }
+  .buildings .building-content .img, .buildings .food-content .img, .foods .building-content .img, .foods .food-content .img {
+    width: 100%;
+  }
+  .buildings .building-content::before, .buildings .food-content::before, .foods .building-content::before, .foods .food-content::before {
+    content: "";
+    display: none;
+  }
+}
+
+.news {
+  position: relative;
+}
+
+.news .line-3 {
+  position: absolute;
+  width: 100%;
+  height: 12vh;
+  background-color: #5BAD92;
+  -webkit-transform: translateY(-46%);
+          transform: translateY(-46%);
+  z-index: 3;
+}
+
+.news .news-content {
+  width: 100%;
+  height: 80vh;
+  background-color: #fff24e;
+}
+
+.news .news-content .news-title {
+  text-align: center;
+}
+
+.news .news-content .news-title h2 {
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  width: 85%;
+  font-size: min(4rem, 50px);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.news .news-content .news-title p {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 85%;
+  font-size: min(1rem, 20px);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.news .news-content .news-list {
+  position: absolute;
+  overflow-y: scroll;
+  top: 37.5%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 70%;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.927);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 2vw;
+}
+
+.news .news-content .news-list.page-bottom {
+  border-radius: 20px;
+}
+
+.news .news-content .news-list.page-bottom #last-news {
+  position: absolute;
+  left: 50%;
+  height: 1px;
+  width: 1%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #747272;
+  -webkit-animation: lastnews 0.2s ease forwards;
+          animation: lastnews 0.2s ease forwards;
+  border-radius: 2px;
+}
+
+.news .news-content .news-list::-webkit-scrollbar {
+  display: none;
+}
+
+.news .news-content .news-list .one-news {
+  padding: 4%;
+  padding-left: 5%;
+  position: relative;
+}
+
+.news .news-content .news-list .one-news a {
+  color: #747272;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.news .news-content .news-list .one-news::before {
+  content: "●";
+}
+
+.news .news-content .news-list .one-news::after {
+  content: "";
+  position: absolute;
+  left: 3%;
+  bottom: -2%;
+  width: 80%;
+  height: 0.5px;
+  background-color: #c2bfbf;
+}
+
+.news .news-content .news-list .one-news:hover a {
+  padding-left: 3%;
+}
+
+.img {
+  cursor: pointer;
+}
+
+@-webkit-keyframes lastnews {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scaleX(50) scaleY(7);
+            transform: scaleX(50) scaleY(7);
+  }
+  100% {
+    -webkit-transform: scaleX(100) scaleY(1);
+            transform: scaleX(100) scaleY(1);
+  }
+}
+
+@keyframes lastnews {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scaleX(50) scaleY(7);
+            transform: scaleX(50) scaleY(7);
+  }
+  100% {
+    -webkit-transform: scaleX(100) scaleY(1);
+            transform: scaleX(100) scaleY(1);
+  }
+}
+
+.slide-svg img {
+  height: 126vh;
+  position: fixed;
+  top: -13%;
+  right: -376vw;
+  z-index: 100;
+  opacity: 0;
+  display: none;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.slide-svg .img-bg {
+  top: 0;
+  right: -340%;
+  height: 100vh;
+  position: fixed;
+  background-color: #fafa92;
+  z-index: 99;
+}
+
+.slide-svg img.move {
+  display: inline !important;
+  -webkit-animation: bgimgmove 1.5s ease 1 forwards;
+          animation: bgimgmove 1.5s ease 1 forwards;
+}
+
+.slide-svg .img-bg.move {
+  -webkit-animation: bgmove 2.5s ease 1 forwards;
+          animation: bgmove 2.5s ease 1 forwards;
+}
+
+@-webkit-keyframes bgimgmove {
+  0% {
+    right: -376vw;
+    opacity: 1;
+  }
+  100% {
+    right: 0vw;
+    opacity: 1;
+  }
+}
+
+@keyframes bgimgmove {
+  0% {
+    right: -376vw;
+    opacity: 1;
+  }
+  100% {
+    right: 0vw;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bgmove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+    opacity: 1;
+  }
+}
+
+@keyframes bgmove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=index.css.map */

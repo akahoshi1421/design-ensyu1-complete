@@ -1,0 +1,25 @@
+$myYellow: rgb(250, 250, 146);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.swiper{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    min-height: -webkit-fill-available;
+    background-color: $myYellow;
+    animation: swiperUp 0.8s ease forwards;
+    z-index: 100;
+}
+
+@keyframes swiperUp {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
